@@ -1,0 +1,804 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100, 200, 300, 400, 500, 600,700,800,900 ');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;                                                 /* Diseño estandar de toda la pàgina*/
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #7FC7D9, #0F1035);               /* Diseño estandar de todo el cuerpo del html*/
+    position: relative;
+    gap: 100px 50px; 
+    padding: 0px 0px;
+}
+
+.container {
+    text-align: center;
+    background-image: url('Images/imagen4.jpg');                            /* Diseño estandar del contaniner que contiene cada pagina, para especficiar imagen de fondo y demàs*/
+    background-size: cover; 
+    background-position: center; 
+    height: auto; 
+    padding: 5%;
+    margin: 0;
+    width: 80%;
+    
+}
+.sidebarcont {
+    width: 35%;
+    padding: 20px;
+    justify-content: center;                                                /* Diseño estandar del container que contiene el indice principal que tiene todas las paginas*/
+    align-items: center;
+    text-align: center;
+} 
+
+h1 {
+    position: relative;  
+    font-size: 3em;                                                         /* Diseño estandar de los titulos*/
+    font-weight: 700;
+    color: #fff;
+}
+
+.sidebar {
+    background-color: #fff;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    position: relative;  
+    justify-content: center;                                                /* Diseño estandar del indice en si, definiendo el fondo y margen*/
+    align-items: center;
+    background: var(--clr); 
+    box-shadow: 0 0 0 15px #1D2B53, 0 25px 55px var(--clr);
+}  
+#boton-menu {
+    display: none;
+    overflow: hidden;
+}
+#label-menu {
+    display: none;
+}
+.sidebar ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;                                              /* Diseño de cada botòn del indice*/    
+}
+
+.sidebar ul li {
+    position: relative; 
+    list-style: none; 
+    width: 80%;
+    height: 100px;
+    display: flex;                                                          /* Diseño de cada subindice*/ 
+    justify-content: center;
+    align-items: center; 
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.sidebar ul li::before {
+    content: '';
+    position: absolute;
+    inset: 30px;                                                            /* Diseño de cada subindice antes de pasar el cursor sobre el*/ 
+
+    box-shadow: 0 0 0 10px var(--clr),  0 0 0 20px #fff, 0 0 0 22px var(--clr);
+    transition: 0.5s;
+}
+
+.sidebar ul li:hover::before {   
+    inset: 15px;                                                            
+}
+
+.sidebar ul li::after {
+    content: '';
+    position: absolute; 
+    inset: 0;
+    background: var(--bg);                                                  /* Diseño de cada indice despues de pasar el pursor sobre el*/ 
+    transform: rotate(45deg); 
+    transition: 0.5s;
+}
+
+.sidebar ul li:hover::after {
+    inset: -10px;                                                           /* Diseño de cada indice despues de pasar el pursor sobre el y mantenerlo*/ 
+    transform: rotate(0deg);
+}
+
+.sidebar ul li a {   
+    position: relative;
+    text-decoration: none;
+    z-index: 10;                                                            /* Diseño del contenido o titulo de cada subindice*/ 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.sidebar ul li a i {
+    font-size: 15px;
+    transition: 0.5s;                                                        /* Diseño de cada icono del subindice*/ 
+    color: var(--clr);
+}
+
+
+.sidebar ul li:hover a i {
+    color: var(--clr);                                                         /* Cambios de cada icono al pasar el cursor sobre el*/ 
+    transform: translateY(-40%);
+}
+
+.sidebar ul li a span {
+    position: absolute;
+    font-family: consolas;
+    color: var(--clr); 
+    opacity: 0;                                                             /* Diseño y animaciones de los titulos y enlace de cada subindice*/ 
+    transition: 0.5s;
+    transform: scale (0) translateY(200%);
+}
+.sidebar ul li:hover a span {
+    opacity: 1;                                                             /* Cambios de cada titulo del indice al pasar el cursor sobre el*/ 
+    transform: scale(1) translateY(100%);
+}
+.siderbar ul li:hover a i ,
+.siderbar ul li:hover a span{
+    filter: drop-shadow (0 0 20px var(--clr)) drop-shadow (0 0 40px var(--clr)) drop-shadow (0 0 60px var(--clr));
+}
+
+.itemcont {
+    width: 65%;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;                                                    /*Diseño del contenedor del contenido de la pagina*/ 
+    min-height: 100vh;
+    text-align: center;
+    padding: 10px 40px;
+    
+}  
+
+.item {
+    position: relative;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    flex-wrap: wrap; 
+    padding: 10% 10%;                                                       /*Diseño del contenedor del contenido, este define el cuadrado y fondo azul donde va el contenido*/ 
+    background: #212a8a;
+    border-radius: 30px;
+    border-style: double;
+    box-shadow: 0 0 0 15px #220147, 0 25px 55px #220147;
+}
+
+.item h1 {
+    text-align: center;
+    flex-basis: 100%;                                                       /*Diseño del titulo dentro del contenido*/ 
+}
+
+.item a{
+    color: #815e5e;                                                     /* Diseño de cada enlace dentro del contenedor*/
+}
+
+.item .card{
+    position: relative;
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap;
+    width: 350px;                                                           /* Diseño de las cards de actividades y personajes */ 
+    height: 350px;
+    background: #fff;
+    border-radius: 2vh;
+    box-shadow: 0 35px 80px rgba(0,0,0,0.15); 
+    transition: 0.5s;
+    margin-top: calc(5rem + 4vw);
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+.item .card:hover {                                                         /* Cambio del diseño de las cards al pasar el cursor sobre la card*/ 
+    height: 500px;
+}
+
+.item .card .imgBx {
+    position: absolute;
+    top: -3vh;
+    width: 80%; 
+    height: 65%;
+    background: #333;                                                   /* Diseño del contenedor de las imagenes de las cards cards de actividades y personajes */ 
+    border-radius: 10%;
+    overflow: hidden;
+    transition: 0.5s;
+}
+.item .card:hover .imgBx {
+    top: -100px;
+    scale: 0.75;                                                            /* Cambio del diseño de cada contenedor de imagen al pasar el cursor sobre el*/ 
+    box-shadow: 0 15px 45px rgba(0,0,0,0.2);
+}
+
+.item .card .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;                                                        /* Diseño de la imagen de cada card*/ 
+    height: 100%;
+    object-fit: cover;
+}
+.item .card .content {
+    position: absolute; 
+    top: 75%;
+    width: 100%;
+    height: 30em;                                                       /* Diseño del texto y boton que van dentro de la card (Esta oculto cuando no se pasa el cursor sobre la card)*/ 
+    overflow: hidden;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.item .card:hover .content {
+    top: 40%;
+    padding: 2px 10px 10px;                                             /* Cambio del diseño de cada card para mostrar el contenidor al pasar el cursor sobre esta*/
+    height: 60%;
+}
+
+.item .card .content h2 {
+    font-size: 1.5em;
+    font-weight: 700;                                                   /* Diseño de cada subtitulo h2 dentro de cada card*/
+    color: var(--clr);
+}
+
+.item .card .content p {                                                /* Diseño de cada parrafo dentro de la card*/
+    font-size: 0.7em;
+    color: #333;                                                            
+}
+
+.item .card .content a {
+    font-size: 0.8vh;
+    position: relative;
+    top: 0.5vh;
+    display: inline-block; 
+    padding: 0.5vh 1.5vh;                                                /* Diseño de cada enlace o boton dentro de la card (Solo aplica en la pàgina de personajes)*/
+    background: var(--clr); 
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 8px;
+}
+.paragraph-wrapper {
+    position: relative;
+    justify-content: center; 
+    display: flex;                                                       /* Diseño de cada parrafo dentro del contenedor de contenido de la pàgina*/
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.parrafo0 {
+    font-size: 1em;
+    color: #fff;                                                        /* Diseño de parrafo alineado al centro*/
+    text-align: center;
+}
+
+.parrafo1 {
+    font-size: 1em; 
+    color: #fff;                                                        /* Diseño de parrafo alineado a la izquierda*/
+    text-align: left;
+}
+
+.parrafo2 {
+    font-size: 1em;
+    color: #fff;                                                           /* Diseño de parrafo alineado a la derecha*/
+    text-align: right;
+}
+
+.indice {
+    background-color: #3d95d8;
+    padding: 10px;
+    border-radius: 5px;                                                     /* Diseño de indice de la pàgina historia*/
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.indice h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;                                                    /* Diseño del titulo de la pàgina historia*/
+}
+
+.indice ul {
+    list-style-type: none;
+    padding: 0;                                                             /* Diseño del listado del indice */   
+    margin: 0;                      
+}
+
+.indice li {
+    margin-bottom: 5px;                                    
+}                                                                           /* Diseño del indice y enlance*/
+
+.indice li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.1em;
+}                                                                           
+
+.indice li a:hover {
+    color: #fff;                                                        /* Diseño de cada subindice al pasar el cursor por el mismo*/
+}
+
+.ulitem {
+    font-size: 1em;
+    color: #fff;                                                        /* Diseño del contenedor de una lista */
+      
+}
+
+.ultext{
+    font-size: 0.7em;
+    color: #333;                                                        /* Diseño del texto de una lista (Pàgina de ubicaciòn)*/  
+    margin-left: 5%; 
+}
+.imgitem1 {
+    max-width: 40%; 
+    height: auto;                                                       /* Diseño de la imagenes que van del lado izquierdo del texto*/
+    float: left; 
+    margin: 5%;
+    border-radius: 12px;
+    border-style: double;
+    box-shadow: 0 0 0 0.5vh #231293, 0 25px 55px #ffffff;
+}
+
+.imgitem2 {
+    max-width: 40%; 
+    height: auto;
+    float: right;                                                       /* Diseño de la imagenes que van del lado derecho del texto*/
+    margin: 5%;
+    border-radius: 12px;
+    border-style: double;
+    box-shadow: 0 0 0 0.5vh #220147, 0 25px 55px #ffffff;
+}
+
+#galeria {
+    margin: 1rem auto;
+    width: 100%;
+    column-count: 3;
+    -webkit-column-span:all;                                            /* Diseño de la estructura de las galeria de imagenes*/        
+    column-span: all;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    -moz-column-rule: 1px solid #bbb;
+    -webkit-column-rule: 1px solid #bbb;
+    column-rule: 1px solid #bbb;
+    margin-bottom: 5%;
+}
+#galeria img {
+    width: 70%;                                                         /* Diseño de las imagenes de la galeria*/ 
+    border-radius: 10px;
+    border-color: aqua;
+}
+strong {
+    font-size: 1.3em;                                                   /* Diseño de las oraciones en negrita*/ 
+    color: #fff;
+}
+
+#ubicacion {
+    width: 80%;
+    height: 400px;                                                      /* Diseño del iframe del mapa de google*/
+    border-radius: 15px;
+    border-style: double;
+    box-shadow: 0 0 0 0.5vh #220147, 0 25px 55px #220147;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.menu li:hover {
+    background-color: #f0f0f0;
+}
+
+                                                                        /* Definiciòn de las variables de colores del menu principal*/
+#sidebarcolor {
+    --clr: #000865;
+}
+#introduccioncolor {
+    --clr: #2483ff;
+}
+
+#ubicacioncolor {
+    --clr: #B03A2E;
+}
+
+#personajescolor {
+    --clr: #1E8449;
+}
+
+#actividadescolor {
+    --clr: #EB984E ;
+}
+
+#historiacolor {
+    --clr: #BB8FCE;
+}
+
+#referenciascolor {
+    --clr: #F8C471;
+}
+                                                                        /* Definiciòn de las variables de colores de las actividades*/
+#investigacioncolor {
+    --clr:#009688;
+}
+
+#patrimoniocolor {
+    --clr:#ff3e7f;
+}
+
+#divulgacioncolor {
+    --clr:#afa902;
+}
+                                                                        /* Definiciòn de las variables de colores de los personajes*/
+#caldascolor {
+    --clr:#ff3e7f;
+}
+#petrescolor {
+    --clr:#f40347;
+}
+#mutiscolor {
+    --clr:#009688;
+}
+#canalcolor {
+    --clr:#afa902;
+}
+#ciprianocolor {
+    --clr:#05817f;
+}
+#benitocolor {
+    --clr:#6704a4;
+}
+#garavitocolor {
+    --clr:#f48003
+}
+#llerascolor {
+    --clr:#09d762;
+}
+#belisariocolor {
+    --clr:#38444a;
+}
+#listcolor {
+    --clr:#bfe019f2;
+}
+
+
+                                                                        /* Estilos para pantallas grandes */
+
+@media (min-width: 1200px) {
+    .container{
+        display: flex;
+    }
+
+    h1 {
+        font-size: 4vh;
+    }
+
+    .sidebar ul li {
+        height: calc(160px + 1vw);
+    }
+
+    .sidebar ul li a {
+        font-size: calc(0.5rem + 0.7vw);
+    }
+
+    .sidebar ul li a i{
+        font-size: calc(0.5rem + 1vw);
+    }
+
+    .parrafo0 {
+        font-size: calc(0.7rem + 0.4vw);
+    }
+
+    .parrafo1 {
+        font-size: calc(0.7rem + 0.4vw);
+    }
+
+    .parrafo2 {
+        font-size: calc(0.7rem + 0.4vw);
+    }
+
+    .ulitem{
+        text-align: left;
+        font-size: calc(0.7rem + 0.4vw);
+    }
+
+    #galeria {
+        max-width: 3000px;
+    }
+
+    .indice h2 {
+        font-size: calc(1rem + 0.7vw);
+    }
+
+    .indice li a{
+        font-size: calc(0.8rem + 0.4vw);
+    }
+
+    .item .card {
+        width: 42vh;                                                            
+        height: 20vh;
+    }
+
+    .item .card:hover {                                                         
+        height: 35vh;
+    }
+
+    .item .card:hover .imgBx {
+        top: -10vh;
+        scale: 0.90;                                                            
+        box-shadow: 0 15px 45px rgba(0,0,0,0.2);
+    }
+
+    .item .card .content {                                                      
+        top: 60%;
+        height: 3vh;                                          
+    }
+
+    .item .card .content p {                                                    
+        font-size: calc(0.05rem + 0.8vh);
+        color: #333;
+        margin-right: 5%;
+        margin-left: 5%                                                           
+    }
+    .item .card .content h2 {
+        font-size: 2vh;
+    }
+
+    .item .card .content a {
+        font-size: calc(0.3rem + 0.7vh);
+    }
+    .ultext{
+        font-size: calc(0.05rem + 0.8vh);
+        margin-left: 5%; 
+        color: #333;                                                        
+    }
+}  
+
+                                                                                /* Estilos para pantallas medianas y pequeñas*/
+@media only screen and (max-width: 1200px) {
+
+    .sidebarcont {
+        width: 100%;
+    }
+
+    .itemcont {
+        width: 100%;
+        padding: 5% 10px;
+    }
+
+    h1 {
+        font-size: calc(0.9rem + 2vw);
+    }
+
+
+    #boton-menu:checked ~ #listindice {
+        margin:1px;
+        display: flex;
+        transition: display 4s allow-discrete;
+    }
+
+    #listindice {
+        position: relative; 
+        top: 0%;
+        width: 100%;
+        height: 100%;
+        display: None;                                                      /* Diseño del texto y boton que van dentro de la card (Esta oculto cuando no se pasa el cursor sobre la card)*/ 
+        overflow: hidden;
+        text-align: center;
+        transition: 0.5s;                                         /* Diseño de cada botòn del indice*/  
+        z-index: 5000;  
+    }
+
+    #indicegrande {
+        display:none;
+    }
+    #label-menu {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    #label-menu:hover {
+        cursor: pointer;
+    }
+
+
+    .sidebar ul li a {
+        font-size: calc(0.5rem + 0.7vw);
+    }
+
+    .sidebar ul li a i{
+        font-size: calc(0.2rem + 1vw);
+    }
+
+    .parrafo0 {
+        font-size: calc(0.4rem + 0.7vw);
+    }
+
+    .parrafo1 {
+        font-size: calc(0.4rem + 0.7vw);
+    }
+
+    .parrafo2 {
+        font-size: calc(0.4rem + 0.7vw);
+    }
+
+    .ulitem{
+        font-size: calc(0.4rem + 0.7vw);
+    }
+
+    .paragraph-wrapper{
+        flex-direction: column;
+    }
+
+    .imgitem1 {
+        max-width: 70%; 
+    }
+
+    .imgitem2 {
+        max-width: 70%; 
+    }
+    
+    #galeria {
+        min-width: 300px;
+        column-count: 2;
+    }
+    .indice h2 {
+        font-size: calc(0.8rem + 0.4vw);
+    }
+    .indice li a{
+        font-size: calc(0.4rem + 0.7vw);
+    } 
+    .indice li {
+        line-height: 5vh;                                     
+    }
+
+    .item .card .content {                                                
+        top: 65%;
+        height: 8.5%;                                       
+    }
+    .item .card .content p {                                                
+        font-size: calc(0.4rem + 0.3vw);
+        color: #333;
+        margin-right: 5%;
+        margin-left: 5%                                                           
+    }
+    .item .card .content h2 {
+        font-size: calc(0.9rem + 0.5vw);
+    }
+
+    .item .card .content a {
+        font-size: calc(0.4rem + 0.5vw);
+    }
+    .ultext{
+        font-size: calc(0.4rem + 0.3vw);
+        color: #333;                                                         
+        margin-left: 5%; 
+    }
+    
+}  
+  
+                                                                                /* Estilos para pantallas pequeñas */
+
+@media (max-width: 800px) {
+
+
+    #galeria {
+        min-width: 150px;
+        column-count: 1;
+    }
+
+    .sidebarcont {
+        width: 100%;
+    }
+
+    .item {
+        width: 100%;
+        padding: 5% 10px;
+    }
+
+    h1 {
+        font-size: calc(0.8rem + 0.5vw);
+    }
+
+
+ 
+
+    .sidebar ul {
+        position: relative; 
+        top: 100%;
+        width: 100%;
+        height: 100%;                                                       /* Diseño del texto y boton que van dentro de la card (Esta oculto cuando no se pasa el cursor sobre la card)*/ 
+        overflow: hidden;
+        text-align: center;
+        transition: 0.5s;                                         /* Diseño de cada botòn del indice*/    
+    }
+
+    .sidebar ul li a {
+        font-size: calc(0.4rem + 1vw);
+    }
+
+    .sidebar ul li a i{
+        font-size: 10px;
+    }
+
+    .parrafo0 {
+        font-size: calc(0.2rem + 0.4vw);
+    }
+
+    .parrafo1 {
+        font-size: calc(0.2rem + 0.4vw);
+    }
+
+    .parrafo2 {
+        font-size: calc(0.2rem + 0.4vw);
+    }
+
+    .imgitem1 {
+        max-width: 75%; 
+        box-shadow: 0 0 0 2px #220147, 0 10px 20px #ffffff;
+    }
+
+    .indice li {
+        line-height: 3vh;                                     
+    } 
+
+    .imgitem2 {
+        max-width: 75%;
+        box-shadow: 0 0 0 2px #220147, 0 10px 20px #ffffff;
+    }
+
+    .ulitem{
+        font-size: calc(0.2rem + 0.5vw);
+    }
+    .item .card{
+        width: 250px;
+        height: 150px;
+        margin-top: calc(5rem + 4vw);
+    }
+    .item .card:hover {                                                        
+        height: 260px;
+    }
+    .item .card:hover .content {
+        padding: 2px 10px 10px;                                           
+        height: 65%; 
+        transition: 0.5s; 
+    }
+    .item .card .content {                                                
+        top: 70%;
+        height: -2vh;                                       
+    }
+    .item .card .content p {                                                
+        font-size: calc(0.2rem + 0.5vw);
+        color: #333;
+        margin-right: 5%;
+        margin-left: 5%                                                           
+    }
+    .item .card .content h2 {
+        font-size: calc(0.4rem + 0.5vw);
+    }
+
+    .item .card .content a {
+        font-size: calc(0.4rem + 0.4vw);
+    }
+    .item .card:hover .imgBx {
+        top: -50px;
+    }
+    .ultext{
+        font-size: calc(0.2rem + 0.5vw);
+        color: #333;                                                       
+        margin-left: 5%; 
+    }
+    
+}  
+
