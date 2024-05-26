@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mapa Interactivo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="style.css"> 
+</head>
+<body>
+    <div class="container">
+
+        <!-- Comienzo del indice que se encuentra en lado izquierdo -->
+
+        <div class="sidebarcont">
+            <div class="sidebar" id="sidebarcolor">
+                <input type="checkbox" id="boton-menu">
+                <label for="boton-menu" id="label-menu">
+                    <ul>
+                        <li id="listcolor">
+                            <h1>ìndice <i class="fa-solid fa-address-book"></i></h1>
+                        </li>
+                    </ul>
+                </label>
+                <h1 id="indicegrande">ìndice <i class="fa-solid fa-address-book"></i></h1>
+                <br>
+                <ul id="listindice">
+                    <li id="introduccioncolor">
+                        <a href="Index.html">
+                            <i class="fa-solid fa-star"></i>           <!-- Boton para ir a pàgina de introducciòn -->
+                            <span>Introducciòn</span>
+                        </a>
+                    </li>
+                
+                    <li id="ubicacioncolor">
+                        <a href="Ubicacion.html">
+                            <i class="fa-solid fa-location-crosshairs"></i>           <!-- Boton para ir a pàgina de ubicaciòn -->
+                            <span>Ubicación</span>
+                        </a>
+                    </li>
+    
+            
+                    <li id="personajescolor">
+                        <a href="Personajes.html">
+                            <i class="fa-solid fa-users"></i>           <!-- Boton para ir a pàgina de personajes -->
+                            <span>Personajes</span>
+                        </a>
+                    </li>
+                
+                    <li id="actividadescolor">
+                        <a href="Actividades.html">
+                            <i class="fa-solid fa-sitemap"></i>          <!-- Boton para ir a pàgina de actividades -->
+                            <span>Actividades</span>
+                        </a>
+                    </li>
+            
+                    <li id="historiacolor">
+                        <a href="Historia.html">
+                            <i class="fa-solid fa-landmark"></i>        <!-- Boton para ir a pàgina de historia -->
+                            <span>Historia</span>
+                        </a>
+                    </li>
+                    <li id="mapacolor">
+                        <a href="Mapa.html">
+                            <i class="fa-regular fa-map"></i>          <!-- Boton para ir a pàgina del mapa interactivo -->
+                            <span>Mapa</span>
+                        </a>
+                    </li>
+                    <li id="referenciascolor">
+                        <a href="Referencias.html">
+                            <i class="fa-solid fa-book"></i>            <!-- Boton para ir a pàgina de referencias -->
+                            <span>Referencias</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Comienzo del contenido de la pàgina referente a referencias -->
+
+        <div class="itemcont">
+            <div class="item">
+                <h1>Mapa Interactivo<br><br></h1>
+                <!-- Iframe del mapa de la ubicaciòn del Observatorio Nacional y texto introductorio-->
+                <figure>
+                    <img src="./Images/mapa.png" class="mapa" alt="">
+                    <figcaption>
+                        <i class="icono fas fa-map-marker" id="figuramap"></i>
+                        <div class="tooltip" id="tooltip">
+                            <div class="thumb">
+                                <img src="Images/observatorio9.jpg" alt="">
+                            </div>
+                            <div class="info">
+                                <h3 class="titulo">Observatorio Astronómico Nacional</h3>
+                                <p class="resumen">El Observatorio Astronómico Nacional de Colombia u OAN es el primer observatorio astronómico construido en América.​ La edificación se concluyó el 20 de agosto de 1803 en la ciudad de Bogotá y fue declarada Monumento Nacional de Colombia por el decreto 1584 del 11 de agosto de 1975.<br />
+                                </p>
+                                <div class="contenedor-btn">
+                                    <button onclick="location.href='https://es.wikipedia.org/wiki/Observatorio_Astronómico_Nacional_de_Colombia'">Más Información</button>
+                                </div>
+                            </div>
+                        </div>
+                    </figcaption>
+                    <figcaption>
+                        <i class="icono fas fa-map-marker" id="figuramap1"></i>
+                        <div class="tooltip" id="tooltip1">
+                            <div class="thumb">
+                                <img src="Images/casadenariño.jpg" alt="">
+                            </div>
+                            <div class="info">
+                                <h3 class="titulo">La Casa de Nariño</h3>
+                                <p class="resumen">La Casa de Nariño o Palacio de Nariño es la residencia oficial y principal sede de trabajo del presidente de la República de Colombia, ubicada en el centro histórico de la ciudad capital de Bogotá<br />
+                                </p>
+                                <div class="contenedor-btn">
+                                    <button onclick="location.href='https://es.wikipedia.org/wiki/Casa_de_Nariño'">Más Información</button>
+                                </div>
+                            </div>
+                        </div>
+                    </figcaption>
+                    <figcaption>
+                        <i class="icono fas fa-map-marker" id="figuramap2"></i>
+                        <div class="tooltip" id="tooltip2">
+                            <div class="thumb">
+                                <img src="Images/palaciodejusticia.jpg" alt="">
+                            </div>
+                            <div class="info">
+                                <h3 class="titulo">Palacio de Justicia Alfonso Reyes Echandía</h3>
+                                <p class="resumen">El Palacio de Justicia de Colombia es un edificio ubicado en la Plaza de Bolívar en la ciudad de Bogotá, sede y símbolo del Poder Judicial en Colombia.
+                                </p>
+                                <div class="contenedor-btn">
+                                    <button onclick="location.href='https://es.wikipedia.org/wiki/Palacio_de_Justicia_de_Colombia'">Más Información</button>
+                                </div>
+                            </div>
+                        </div>
+                    </figcaption>
+                    <figcaption>
+                        <i class="icono fas fa-map-marker" id="figuramap3"></i>
+                        <div class="tooltip" id="tooltip3">
+                            <div class="thumb">
+                                <img src="Images/Catedral_Primada_de_Colombia-Bogota.jpg" alt="">
+                            </div>
+                            <div class="info">
+                                <h3 class="titulo">Basílica Metropolitana de Bogotá Catedral Primada de Colombia</h3>
+                                <p class="resumen">Oficialmente Sacro Santo Templo Catedral Basílica Metropolitana y Primada de la Inmaculada Concepción de María y San Pedro, es una iglesia catedralicia de culto católico consagrada a la Inmaculada Concepción y bajo el patrocinio de San Pedro;​ es un edificio de estilo neoclásico localizado en la Plaza de Bolívar de Bogotá, capital del país.
+                                </p>
+                                <div class="contenedor-btn">
+                                    <button onclick="location.href='https://es.wikipedia.org/wiki/Catedral_Primada_de_Colombia'">Más Información</button>
+                                </div>
+                            </div>
+                        </div>
+                    </figcaption>
+                    <figcaption>
+                        <i class="icono fas fa-map-marker" id="figuramap4"></i>
+                        <div class="tooltip" id="tooltip4">
+                            <div class="thumb">
+                                <img src="Images/congresodelarepublica.jpg" alt="">
+                            </div>
+                            <div class="info">
+                                <h3 class="titulo">Congreso de la República</h3>
+                                <p class="resumen">El Congreso de la República de Colombia es la legislatura bicameral de la República de Colombia integrado por el Senado y por la Cámara de Representantes. El Congreso tiene su sede en el Capitolio Nacional ubicado en la plaza de Bolívar en la ciudad de Bogotá, capital de la República.​
+                                </p>
+                                <div class="contenedor-btn">
+                                    <button onclick="location.href='https://es.wikipedia.org/wiki/Congreso_de_la_República_de_Colombia'">Más Información</button>
+                                </div>
+                            </div>
+                        </div>
+                    </figcaption>
+                    <figcaption>
+                        <i class="icono fas fa-map-marker" id="figuramap5"></i>
+                        <div class="tooltip" id="tooltip5">
+                            <div class="thumb">
+                                <img src="Images/museoarqueologico.jpg" alt="">
+                            </div>
+                            <div class="info">
+                                <h3 class="titulo">Museo Arqueológico Casa del Marqués de San Jorge</h3>
+                                <p class="resumen">El Museo Arqueológico «MUSA» es un museo de Bogotá cuya sede se conoce como la «Casa del Marqués de San Jorge», edificio que se remonta al siglo XVIII y que perteneció al citado Marqués.
+                                </p>
+                                <div class="contenedor-btn">
+                                    <button onclick="location.href='https://es.wikipedia.org/wiki/Museo_Arqueológico_Casa_del_Marqués_de_San_Jorge'">Más Información</button>
+                                </div>
+                            </div>
+                        </div>
+                    </figcaption>
+                    <figcaption>
+                        <i class="icono fas fa-map-marker" id="figuramap6"></i>
+                        <div class="tooltip" id="tooltip6">
+                            <div class="thumb">
+                                <img src="Images/plazanuñez.jpg" alt="">
+                            </div>
+                            <div class="info">
+                                <h3 class="titulo">Plaza de Núñez</h3>
+                                <p class="resumen">La Plaza Núñez está ubicada sobre la calle Novena, entre carreras Séptima y Octava, en pleno centro histórico de Bogotá. A ella se puede llegar caminando por cualquiera de estas dos carreras, que van a dar, una cuadra más hacia el norte, hasta la Plaza de Bolívar.
+                                </p>
+                                <div class="contenedor-btn">
+                                    <button onclick="location.href='https://www.canalinstitucional.tv/te-interesa/plaza-nunez-donde-como-visitar-horario'">Más Información</button>
+                                </div>
+                            </div>
+                        </div>
+                    </figcaption>
+                    <figcaption>
+                        <i class="icono fas fa-map-marker" id="figuramap7"></i>
+                        <div class="tooltip" id="tooltip7">
+                            <div class="thumb">
+                                <img src="Images/plazabolivar.jpg" alt="">
+                            </div>
+                            <div class="info">
+                                <h3 class="titulo">Plaza de Bolívar</h3>
+                                <p class="resumen">La plaza de Bolívar es la plaza principal de la ciudad de Bogotá y de Colombia. Está ubicada en el centro histórico de la ciudad, entre las carreras Séptima y Octava con calles Décima y Once
+                                </p>
+                                <div class="contenedor-btn">
+                                    <button onclick="location.href='https://es.wikipedia.org/wiki/Plaza_de_Bolívar'">Más Información</button>
+                                </div>
+                            </div>
+                        </div>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+    <script src="map.js"></script>  
+</body> 
+</html>
